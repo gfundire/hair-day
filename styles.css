@@ -1,0 +1,300 @@
+:root {
+  --lightbrown: #b0290e;
+  --darkbrown: #631f12;
+  --lightgreen: #7db020;
+  --darkblue: #204db0;
+  --navyblue: #032263;
+  --background-cream: #f5e8e8;
+  --card-border-radius: 5px;
+  --card-color: #f9f9f9;
+  --card-color-2: #f1f3f4;
+  --background-white: #fff;
+  --common-spacing: 2.5rem;
+  --nav-footer-height: 50px;
+  --space-100: 100%;
+  --card-padding: 1.5rem;
+}
+html {
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/*---------------- CSS Reset -----------------*/
+
+body,
+p,
+h1,
+h2,
+h3,
+ul {
+  margin: 0;
+  padding: 0;
+}
+/* Links */
+a {
+  text-decoration: none;
+  color: var(--background-white);
+}
+a:link {
+  color: var(--background-white);
+}
+a:visited {
+  color: var(--background-white);
+}
+a:hover {
+  color: var(--background-white);
+  font-weight: bold;
+  border-bottom: 2px solid;
+}
+a:active {
+  background-color: var(--background-white);
+  color: var(--navyblue);
+  border-radius: var(--card-border-radius);
+  padding: 0.7rem;
+}
+header a:hover,
+footer a:hover {
+  border: none;
+}
+nav a:hover {
+  transition: all 0.5s ease-out;
+}
+header a:active,
+footer a:active {
+  background: none;
+  padding: 0;
+  border: none;
+}
+.banner a:hover {
+  border: none;
+}
+.banner a:active {
+  background: none;
+  padding: 0;
+}
+
+a .btn:hover {
+  color: var(--background-white);
+  border: 1px solid var(--background-white);
+}
+
+body {
+  font-family: "Fira Sans", Arial, sans-serif;
+  background-color: var(--background-cream);
+}
+/* Main */
+main {
+  min-height: 100vh;
+}
+
+/*------------------- Header -----------------*/
+header {
+  text-align: center;
+  padding-block-start: var(--card-padding);
+  padding-block-end: 1rem;
+}
+header img {
+  width: 10rem;
+  height: 5rem;
+}
+
+/*------------------- Nav -------------------*/
+nav {
+  position: sticky;
+  top: 0;
+  border-block-end: 1px var(--background-white) solid;
+}
+nav,
+footer {
+  background-color: var(--darkblue);
+  color: var(--background-white);
+}
+nav ul {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  height: var(--space-100);
+  justify-content: space-around;
+}
+nav ul li {
+  display: inline-block;
+  padding: 0.5rem;
+}
+
+em {
+  font-style: normal;
+}
+section,
+footer {
+  display: flex;
+  flex-wrap: wrap;
+}
+article {
+  flex-basis: 100%;
+}
+article:nth-of-type(2) {
+  margin-block: var(--common-spacing);
+}
+
+aside {
+  padding-inline: var(--common-spacing);
+  padding-block: 1.2rem;
+  background-color: var(--background-white);
+  width: var(--space-100);
+  text-align: center;
+}
+button {
+  color: #fff;
+  background-color: var(--darkblue);
+  font-weight: bold;
+  padding-block: 0.5rem;
+  border: 1px solid var(--darkblue);
+  width: var(--space-100);
+  border-radius: var(--card-border-radius);
+}
+.green {
+  color: var(--lightgreen);
+}
+.banner {
+  height: 60vh;
+  background-image: url(images/blowing.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.banner > div {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  color: var(--background-white);
+  animation-duration: 3s;
+  animation-name: slidein;
+}
+.banner button {
+  width: 8rem;
+  border-radius: var(--card-padding);
+  border: 1px solid var(--lightgreen);
+  background-color: var(--lightgreen);
+  color: black;
+}
+.banner > h1 {
+  font-size: var(--card-padding);
+}
+.banner > h2 {
+  font-size: 2rem;
+  font-weight: bolder;
+}
+
+.card-area {
+  padding: var(--common-spacing);
+}
+/*--------- Card Style-------- */
+.card {
+  max-width: var(--space-100);
+  border-radius: var(--card-border-radius);
+  background-color: var(--card-color);
+  padding-block-end: var(--card-padding);
+  display: flex;
+  flex-direction: column;
+}
+
+/* -----------Effects------------- */
+.spin:hover {
+  transform: scale(1.2, 1.2);
+  transition: all 0.5s ease-out;
+}
+
+.spin {
+  transform: rotate(-60deg);
+  background-color: #b0290e;
+  padding: 1rem;
+  display: inline-block;
+  border-radius: 50%;
+}
+.btn:hover {
+  background: none;
+  color: var(--darkblue);
+  transform: scale(1.05, 1.05);
+  transition: all 0.5s ease-out;
+}
+.card:hover {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  transition: all 0.5s ease-out;
+  transform: scale(1.025, 1.025);
+  opacity: 0.95;
+}
+/* -------------Card Styles-------------- */
+.card-text {
+  padding-inline: var(--card-padding);
+}
+.card-text p {
+  font-size: medium;
+  line-height: 1.2;
+  text-align: justify;
+}
+.card-text button {
+  margin-block-start: 1.3rem;
+}
+.card img {
+  width: var(--space-100);
+  height: auto;
+  border-radius: var(--card-border-radius) var(--card-border-radius) 0 0;
+}
+.card > h2 {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-block: 1rem;
+}
+/* ----------Footer---------*/
+footer {
+  padding-inline: var(--common-spacing);
+  padding-block: 0.5rem;
+  align-items: center;
+  justify-content: space-around;
+  background-color: var(--navyblue);
+}
+footer img {
+  display: block;
+}
+footer div:first-child {
+  margin-block-end: 0.5rem;
+}
+
+/*------------------- Big Screen ----------------------*/
+
+@media screen and (min-width: 600px) /* and (orientation: landscape) */ {
+  nav,
+  footer {
+    height: var(--nav-footer-height);
+  }
+
+  .card-area article {
+    flex: 1;
+  }
+  article:nth-of-type(2) {
+    margin-inline: var(--common-spacing);
+    margin-block: 0;
+  }
+  footer div:first-child {
+    margin-block-end: 0;
+  }
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
